@@ -15,6 +15,7 @@ public class Cliente {
         this.correo = correo;
         this.pais = pais;
         this.esFrecuente = esFrecuente;
+
     }
 
 }
