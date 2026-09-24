@@ -34,85 +34,45 @@ public class Proyecto {
         this.valorTotal = 0.0;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
+    public String getCodigo() {return codigo;}
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
+    public void setCodigo(String codigo) {this.codigo = codigo;}
 
-    public String getFechaSolicitud() {
-        return fechaSolicitud;
-    }
+    public String getFechaSolicitud() {return fechaSolicitud;}
 
-    public void setFechaSolicitud(String fechaSolicitud) {
-        this.fechaSolicitud = fechaSolicitud;
-    }
+    public void setFechaSolicitud(String fechaSolicitud) {this.fechaSolicitud = fechaSolicitud;}
 
-    public String getFechaInicio() {
-        return fechaInicio;
-    }
+    public String getFechaInicio() {return fechaInicio;}
 
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
+    public void setFechaInicio(String fechaInicio) {this.fechaInicio = fechaInicio;}
 
-    public String getFechaEntrega() {
-        return fechaEntrega;
-    }
+    public String getFechaEntrega() {return fechaEntrega;}
 
-    public void setFechaEntrega(String fechaEntrega) {
-        this.fechaEntrega = fechaEntrega;
-    }
+    public void setFechaEntrega(String fechaEntrega) {this.fechaEntrega = fechaEntrega;}
 
-    public String getMetodoPago() {
-        return metodoPago;
-    }
+    public String getMetodoPago() {return metodoPago;}
 
-    public void setMetodoPago(String metodoPago) {
-        this.metodoPago = metodoPago;
-    }
+    public void setMetodoPago(String metodoPago) {this.metodoPago = metodoPago;}
 
-    public String getEstado() {
-        return estado;
-    }
+    public String getEstado() {return estado;}
 
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
+    public void setEstado(String estado) {this.estado = estado;}
 
-    public double getValorTotal() {
-        return valorTotal;
-    }
+    public double getValorTotal() {return valorTotal;}
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
+    public void setValorTotal(double valorTotal) {this.valorTotal = valorTotal;}
 
-    public Cliente getCliente() {
-        return cliente;
-    }
+    public Cliente getCliente() {return cliente;}
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
+    public void setCliente(Cliente cliente) {this.cliente = cliente;}
 
-    public Desarrollador[] getDesarrolladoresAsignados() {
-        return desarrolladoresAsignados;
-    }
+    public Desarrollador[] getDesarrolladoresAsignados() {return desarrolladoresAsignados;}
 
-    public void setDesarrolladoresAsignados(Desarrollador[] desarrolladoresAsignados) {
-        this.desarrolladoresAsignados = desarrolladoresAsignados;
-    }
+    public void setDesarrolladoresAsignados(Desarrollador[] desarrolladoresAsignados) {this.desarrolladoresAsignados = desarrolladoresAsignados;}
 
-    public ServicioAdicional[] getServiciosContratados() {
-        return serviciosContratados;
-    }
+    public ServicioAdicional[] getServiciosContratados() {return serviciosContratados;}
 
-    public void setServiciosContratados(ServicioAdicional[] serviciosContratados) {
-        this.serviciosContratados = serviciosContratados;
-    }
+    public void setServiciosContratados(ServicioAdicional[] serviciosContratados) {this.serviciosContratados = serviciosContratados;}
 
     public boolean asignarDesarrollador(Desarrollador dev) {
         for (int i = 0; i < desarrolladoresAsignados.length; i++) {
