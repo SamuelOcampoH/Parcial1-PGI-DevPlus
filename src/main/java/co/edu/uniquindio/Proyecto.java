@@ -1,5 +1,7 @@
 package co.edu.uniquindio;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 
 public class Proyecto {
@@ -112,8 +114,64 @@ public class Proyecto {
         this.serviciosContratados = serviciosContratados;
     }
 
+    public boolean asignarDesarrollador(Desarrollador dev) {
+        for (int i = 0; i < desarrolladoresAsignados.length; i++) {
+            if (desarrolladoresAsignados[i] == null) {
+                desarrolladoresAsignados[i] = dev;
+                dev.setEstado("Asignado");
+                return true;
+            }
+        }
+        return false;
+    }
 
-    
+    public boolean agregarServicio(ServicioAdicional servicio) {
+        for (int i = 0; i < serviciosContratados.length; i++) {
+            if (serviciosContratados[i] == null) {
+                serviciosContratados[i] = servicio;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public double calcularValorTotal() {
+        long dias = 1;
+        try {
+            LocalDate inicio = LocalDate.parse(this.fechaInicio);
+            LocalDate fin = LocalDate.parse(this.fechaEntrega);
+            dias = ChronoUnit.DAYS.between(inicio, fin);
+            if (dias <= 0) dias = 1;
+        } catch (Exception e) {
+            dias = 30; // Valor por defecto en caso de formato no estándar
+        }
+
+        double totalDevs = 0.0;
+        for (Desarrollador dev : desarrolladoresAsignados) {
+            if (dev != null) {
+                totalDevs += (dev.getTarifaPorDia() * dias);
+            }
+        }
+
+        double totalServicios = 0.0;
+        for (ServicioAdicional serv : serviciosContratados) {
+            if (serv != null) {
+                totalServicios += serv.getPrecio();
+            }
+        }
+
+        double subtotal = totalDevs + totalServicios;
+
+
+
+        if (cliente != null && cliente.isEsFrecuente()) {
+            subtotal = subtotal * 0.90;
+        }
+
+        this.valorTotal = subtotal;
+        return this.valorTotal;
+    }
+
 
     @Override
     public String toString() {
