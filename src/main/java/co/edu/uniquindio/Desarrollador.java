@@ -61,7 +61,7 @@ public class Desarrollador {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    public boolean isDisnponible() {
+    public boolean isDisponible() {
         return disnponible;
 
     }
