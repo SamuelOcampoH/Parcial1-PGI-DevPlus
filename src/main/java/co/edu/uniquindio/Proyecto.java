@@ -103,7 +103,7 @@ public class Proyecto {
             dias = ChronoUnit.DAYS.between(inicio, fin);
             if (dias <= 0) dias = 1;
         } catch (Exception e) {
-            dias = 30; // Valor por defecto en caso de formato no estándar
+            dias = 30;
         }
 
         double totalDevs = 0.0;

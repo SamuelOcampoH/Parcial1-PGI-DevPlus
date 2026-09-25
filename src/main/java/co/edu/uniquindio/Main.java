@@ -155,7 +155,7 @@ public class Main {
 
         Proyecto proyecto = new Proyecto(codigo, fechaSol, fechaIni, fechaEnt, "Pendiente", metodoPago, cliente);
 
-        // Asignación de desarrolladores disponibles
+
         int agregarDev = JOptionPane.showConfirmDialog(null, "¿Desea asignar un desarrollador al proyecto?", "Asignar", JOptionPane.YES_NO_OPTION);
         while (agregarDev == JOptionPane.YES_OPTION) {
             String codDev = JOptionPane.showInputDialog("Ingrese código del desarrollador:");
@@ -169,7 +169,7 @@ public class Main {
             agregarDev = JOptionPane.showConfirmDialog(null, "¿Desea asignar otro desarrollador?", "Asignar", JOptionPane.YES_NO_OPTION);
         }
 
-        // Asignación de servicios adicionales
+
         int agregarServ = JOptionPane.showConfirmDialog(null, "¿Desea agregar un servicio adicional?", "Servicios", JOptionPane.YES_NO_OPTION);
         while (agregarServ == JOptionPane.YES_OPTION) {
             String codServ = JOptionPane.showInputDialog("Ingrese código del servicio:");
@@ -286,7 +286,6 @@ public class Main {
     }
 
     private static void cargarDatosPrueba() {
-        // Datos rápidos para probar de inmediato en el video sin digitar todo desde cero
         listaClientes[0] = new Cliente("Tech Solutions", "900123456", "6", "contacto@tech.co", "Colombia", true);
         listaDesarrolladores[0] = new Desarrollador("DEV-01", "Backend", "Senior", 2, 150000.0, "Disponible", true);
         listaServicios[0] = new ServicioAdicional("SRV-01", "Despliegue Cloud", "AWS Setup", 300000.0, true);
