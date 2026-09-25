@@ -5,14 +5,14 @@ import javax.swing.*;
 
 public class Main {
 
-    // Arreglos principales para el almacenamiento en memoria
+
     static Cliente[] listaClientes = new Cliente[10];
     static Desarrollador[] listaDesarrolladores = new Desarrollador[10];
     static Proyecto[] listaProyectos = new Proyecto[10];
     static ServicioAdicional[] listaServicios = new ServicioAdicional[10];
 
     public static void main(String[] args) {
-        cargarDatosPrueba(); // Carga datos base para facilitar la sustentación
+        cargarDatosPrueba();
 
         int option = 0;
         do {
@@ -64,9 +64,7 @@ public class Main {
         } while (option != 0);
     }
 
-    // ==========================================
-    // 1. GESTIÓN DE CLIENTES
-    // ==========================================
+
     private static void solicitarRegistroCliente() {
         String nombre = JOptionPane.showInputDialog("Ingrese el nombre completo o razón social:");
         String documento = JOptionPane.showInputDialog("Ingrese el documento o NIT:");
@@ -93,9 +91,7 @@ public class Main {
         return false;
     }
 
-    // ==========================================
-    // 2. GESTIÓN DE DESARROLLADORES
-    // ==========================================
+
     private static void solicitarRegistroDesarrollador() {
         String codigo = JOptionPane.showInputDialog("Ingrese el código del desarrollador:");
         String equipo = JOptionPane.showInputDialog("Ingrese el equipo de trabajo:");
@@ -122,9 +118,7 @@ public class Main {
         return false;
     }
 
-    // ==========================================
-    // 3. GESTIÓN DE SERVICIOS ADICIONALES
-    // ==========================================
+
     private static void solicitarRegistroServicio() {
         String codigo = JOptionPane.showInputDialog("Código del servicio:");
         String nombre = JOptionPane.showInputDialog("Nombre del servicio:");
@@ -143,9 +137,7 @@ public class Main {
         JOptionPane.showMessageDialog(null, "No hay espacio para más servicios.");
     }
 
-    // ==========================================
-    // 4. GESTIÓN DE PROYECTOS
-    // ==========================================
+
     private static void solicitarRegistroProyecto() {
         String docCliente = JOptionPane.showInputDialog("Ingrese documento o NIT del cliente:");
         Cliente cliente = buscarClientePorDocumento(docCliente);
@@ -191,7 +183,7 @@ public class Main {
             agregarServ = JOptionPane.showConfirmDialog(null, "¿Desea agregar otro servicio?", "Servicios", JOptionPane.YES_NO_OPTION);
         }
 
-        // Confirmar proyecto y actualizar valor
+
         proyecto.setEstado("Confirmado");
         proyecto.calcularValorTotal();
 
@@ -204,16 +196,14 @@ public class Main {
         }
     }
 
-    // ==========================================
-    // 5. FUNCIONALIDAD: NÚMERO PERFECTO
-    // ==========================================
+
     private static void solicitarConsultaClientePerfecto() {
         String telefono = JOptionPane.showInputDialog("Ingrese el número de teléfono del cliente a consultar:");
         Cliente cliente = buscarClientePorTelefono(telefono);
 
         if (cliente != null) {
             try {
-                // Extraemos solo dígitos numéricos del teléfono
+
                 String soloDigitos = telefono.replaceAll("[^0-9]", "");
                 long numeroTel = Long.parseLong(soloDigitos);
 
@@ -246,9 +236,7 @@ public class Main {
         return suma == n;
     }
 
-    // ==========================================
-    // 6. FUNCIONALIDAD: INGRESOS POR FECHA
-    // ==========================================
+
     private static void solicitarCalculoIngresosFecha() {
         String fechaConsulta = JOptionPane.showInputDialog("Ingrese la fecha de solicitud a consultar (AAAA-MM-DD):");
         double ingresosTotales = 0;
@@ -268,9 +256,7 @@ public class Main {
         );
     }
 
-    // ==========================================
-    // MÉTODOS AUXILIARES DE BÚSQUEDA
-    // ==========================================
+
     private static Cliente buscarClientePorDocumento(String doc) {
         for (Cliente c : listaClientes) {
             if (c != null && c.getDocumento().equalsIgnoreCase(doc)) return c;
